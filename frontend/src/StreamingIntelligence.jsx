@@ -179,17 +179,25 @@ export default function StreamingIntelligence() {
   const [predictiveOn, setPredictiveOn] = useState(true);
   const [selectedTrack, setSelectedTrack] = useState(0);
 
+  // ─── paste here ───
+  const [liveData, setLiveData] = useState(null);
+  useEffect(() => {
+    fetch(`http://localhost:8000/analytics?min_streams=${minStreams}&rising_only=${risingOnly}`)
+      .then(r => r.json())
+      .then(setLiveData)
+      .catch(() => setLiveData(null)); // fall back to seed
+  }, [minStreams, risingOnly]);
+  // ─── end ───
+
   // Apply filters
   const filtered = useMemo(() => {
-    let data = SEED_TRACKS.filter((t) => t.streams >= minStreams);
+    const source = liveData?.top_gainers ?? SEED_TRACKS;   // ← was: SEED_TRACKS
+    let data = source.filter((t) => t.streams >= minStreams);
     if (risingOnly) {
-      const median = [...data].sort((a, b) => a.streams - b.streams)[
-        Math.floor(data.length / 2)
-      ]?.streams || 0;
-      data = data.filter((t) => t.streams < median).sort((a, b) => b.momentum - a.momentum);
+      // ... leave the rest unchanged ...
     }
     return data;
-  }, [minStreams, risingOnly]);
+  }, [minStreams, risingOnly, liveData]);   // ← add liveData
 
   const topGainers = useMemo(
     () => [...filtered].sort((a, b) => b.daily - a.daily).slice(0, 10),

@@ -1,5 +1,4 @@
-﻿@"
-# Python
+﻿# Python
 .venv/
 __pycache__/
 *.pyc
@@ -15,4 +14,3 @@ dist/
 # OS / editor
 .DS_Store
 Thumbs.db
-"@ | Out-File -FilePath .gitignore -Encoding utf8s
