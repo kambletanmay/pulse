@@ -179,16 +179,18 @@ export default function StreamingIntelligence() {
   const [predictiveOn, setPredictiveOn] = useState(true);
   const [selectedTrack, setSelectedTrack] = useState(0);
 
-  // ─── paste here ───
+  // ─── API wiring ───
+  const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
   const [liveData, setLiveData] = useState(null);
+
   useEffect(() => {
-    fetch(`http://localhost:8000/analytics?min_streams=${minStreams}&rising_only=${risingOnly}`)
+    fetch(`${API}/analytics?min_streams=${minStreams}&rising_only=${risingOnly}`)
       .then(r => r.json())
       .then(setLiveData)
       .catch(() => setLiveData(null)); // fall back to seed
   }, [minStreams, risingOnly]);
   // ─── end ───
-
+  
   // Apply filters
   const filtered = useMemo(() => {
     const source = liveData?.top_gainers ?? SEED_TRACKS;   // ← was: SEED_TRACKS
