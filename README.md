@@ -10,7 +10,7 @@
 <!--    TYPING ANIMATION                                  -->
 <!-- ═══════════════════════════════════════════════════ -->
 
-<a href="https://pulse-opal-omega.vercel.app/">
+<a href="https://pulse-xxxx.vercel.app">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=2800&pause=900&color=A855F7&center=true&vCenter=true&multiline=false&width=720&lines=A+Cyber-Noir+Streaming+Intelligence+Terminal;Momentum+%C2%B7+Velocity+%C2%B7+Forecast+%C2%B7+Vibe;React+%2B+FastAPI+%2B+Recharts+%2B+Framer+Motion;Built+for+the+Bloomberg-of-Music+aesthetic" alt="Typing SVG"/>
 </a>
 
@@ -29,7 +29,7 @@
 
 <br/>
 
-[<kbd> <br/> &nbsp;&nbsp;**Live Demo**&nbsp;&nbsp; <br/> </kbd>](https://pulse-opal-omega.vercel.app/)
+[<kbd> <br/> &nbsp;&nbsp;**Live Demo**&nbsp;&nbsp; <br/> </kbd>](https://pulse-xxxx.vercel.app)
 &nbsp;
 [<kbd> <br/> &nbsp;&nbsp;**API Docs**&nbsp;&nbsp; <br/> </kbd>](https://your-pulse-backend.onrender.com/docs)
 &nbsp;
